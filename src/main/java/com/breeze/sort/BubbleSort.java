@@ -1,6 +1,9 @@
 package com.breeze.sort;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.Random;
 
 /**
  * @author breeze
@@ -16,7 +19,7 @@ import java.util.Arrays;
  */
 public class BubbleSort {
     public static void main(String[] args) {
-        int[] arr = {3, 9, -1, 10, 20};
+/*        int[] arr = {3, 9, -1, 10, 20};
 
         //为了容易理解，我们把冒泡排序的演变过程展示出来
 
@@ -64,17 +67,29 @@ public class BubbleSort {
             }
         }
         System.out.println("第四次排序的数组：" + Arrays.toString(arr));
-        System.out.println("=========================");
+        System.out.println("=========================");*/
 
         //优化模式
-        BubbleSort.sort();
+        int[] arr = new int[80000]; // 15s  14s 14s
+        //测试冒泡算法时间
+        for (int i = 0; i < 80000; i++) {
+            arr[i] = (int) (Math.random() * 8000000); //随机生成一个[0, 8000000)数
+        }
+        //开始时间
+        Date begin = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println("排序前时间：" + format.format(begin));
 
+        BubbleSort.sort(arr);
 
+        //结束时间
+        Date end = new Date();
+        System.out.println("排序前时间：" + format.format(end));
 
     }
 
-    private static void sort() {
-        int[] arr = {3, 9, -1, 10, 20};
+    private static void sort(int[] arr) {
+
         //临时变量
         int temp = 0;
 
@@ -89,8 +104,8 @@ public class BubbleSort {
                     arr[j] = temp;
                 }
             }
-            System.out.print("优化后：第" + i + "次排序的数组：");
-            System.out.println(Arrays.toString(arr));
+//            System.out.print("优化后：第" + i + "次排序的数组：");
+//            System.out.println(Arrays.toString(arr));
 
             //如果一次交换都没有发生
             if (flag) {
