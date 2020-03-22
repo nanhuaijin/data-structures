@@ -25,9 +25,9 @@ public class ShellSort {
 
 
         //优化模式
-        int[] arr = new int[8];
+        int[] arr = new int[80000];
         //测试希尔排序算法时间
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 80000; i++) {
             arr[i] = (int) (Math.random() * 8000000); //随机生成一个[0, 8000000)数
         }
         //开始时间
@@ -35,8 +35,8 @@ public class ShellSort {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS");
         System.out.println("排序前时间：" + format.format(begin));
 
-        shellSort2(arr); //除以2的时间：71毫秒  72毫秒 66毫秒
-                        //除以3的时间：57ms  73ms  71ms
+        shellSort2(arr); //除以2的时间：104毫秒  160毫秒 94毫秒
+                        //除以3的时间：136ms  114ms  102ms
 
         //结束时间
         Date end = new Date();
