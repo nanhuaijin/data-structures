@@ -11,9 +11,9 @@ import java.io.*;
  * @author breeze
  * @date 2020/3/19
  *
- * file创建内存临时文件
+ * file创建临时文件
  */
-public class MemoryTempFIle {
+public class TempFIle {
     public static void main(String[] args) {
 
         //1.创建要变成临时文件的string，以及临时文件的名称
@@ -32,7 +32,7 @@ public class MemoryTempFIle {
 
             fis = new FileInputStream(tempFile);
 
-            MultipartFile multipartFile = new MockMultipartFile(tempFileName, tempFileName,
+            MultipartFile multipartFile = new MockMultipartFile(tempFileName, tempFile.getName(),
                     ContentType.APPLICATION_OCTET_STREAM.toString(), fis);
 
             System.out.println(multipartFile);

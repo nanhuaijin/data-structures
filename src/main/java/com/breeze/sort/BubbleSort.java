@@ -20,7 +20,7 @@ public class BubbleSort {
     public static void main(String[] args) {
 
         //优化模式
-        int[] arr = new int[80000]; // 15s  14s 14s
+        int[] arr = new int[80000];
         //测试冒泡算法时间
         for (int i = 0; i < 80000; i++) {
             arr[i] = (int) (Math.random() * 8000000); //随机生成一个[0, 8000000)数
@@ -30,7 +30,7 @@ public class BubbleSort {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println("排序前时间：" + format.format(begin));
 
-        BubbleSort.bubbleSort(arr);
+        BubbleSort.bubbleSort(arr);// 15s  14s 14s
 
         //结束时间
         Date end = new Date();
