@@ -43,13 +43,16 @@ public class InsertSort {
      * @param arr
      */
     private static void insertSort(int[] arr) {
+        //定义在for循环外边减少开销
+        int insetVal = 0;
+        int insertIndex = 0;
 
         for (int i = 0; i < arr.length - 1; i++) {
 
             //第一轮{101, 34, 119, 1} => {34, 101, 119 ,1}
             //定义待插入的数
-            int insetVal = arr[i+1];
-            int insertIndex = i;//即arr[1]前面这个数的下标
+            insetVal = arr[i+1];
+            insertIndex = i;//即arr[1]前面这个数的下标
 
             //给insertVal 找到插入的位置
             //1.insertIndex >= 0 保证不越界
