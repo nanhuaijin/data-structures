@@ -1,6 +1,8 @@
 package com.breeze.sort;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 
 /**
  * @author breeze
@@ -15,12 +17,23 @@ import java.util.Arrays;
 public class SelectSort {
     public static void main(String[] args) {
 
-        int[] arr = {101, 340, 119, 1};
-        int[] arr1 = {101, 340, 119, 1};
+        //优化模式
+        int[] arr = new int[80000];
+        //测试选择算法时间
+        for (int i = 0; i < 80000; i++) {
+            arr[i] = (int) (Math.random() * 8000000); //随机生成一个[0, 8000000)数
+        }
+        //开始时间
+        Date begin = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println("排序前时间：" + format.format(begin));
 
-        selectSortBySept(arr);
-        System.out.println("===========");
-        selectSort(arr1);
+        SelectSort.selectSort(arr); //4s 4s 4s
+
+        //结束时间
+        Date end = new Date();
+        System.out.println("排序前时间：" + format.format(end));
+
     }
 
     /**
@@ -40,10 +53,11 @@ public class SelectSort {
                     minIndex = j;
                 }
             }
-
-            arr[minIndex] = arr[i];
-            arr[i] = min;
-            System.out.println("第" + (i+1) + "次排序结果：" + Arrays.toString(arr));
+            if (minIndex != i) {
+                arr[minIndex] = arr[i];
+                arr[i] = min;
+            }
+//            System.out.println("第" + (i+1) + "次排序结果：" + Arrays.toString(arr));
         }
         
     }
