@@ -27,10 +27,10 @@ public class BubbleSort {
         }
         //开始时间
         Date begin = new Date();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS");
         System.out.println("排序前时间：" + format.format(begin));
 
-        BubbleSort.bubbleSort(arr);// 15s  14s 14s
+        BubbleSort.bubbleSort(arr);// 13s 230  13s 355  13s 365
 
         //结束时间
         Date end = new Date();

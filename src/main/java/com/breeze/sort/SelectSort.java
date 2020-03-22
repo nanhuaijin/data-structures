@@ -25,10 +25,10 @@ public class SelectSort {
         }
         //开始时间
         Date begin = new Date();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS");
         System.out.println("排序前时间：" + format.format(begin));
 
-        SelectSort.selectSort(arr); //4s 4s 4s
+        SelectSort.selectSort(arr); // 3s 893  3s 541  3s 157
 
         //结束时间
         Date end = new Date();

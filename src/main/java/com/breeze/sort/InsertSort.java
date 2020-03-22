@@ -27,10 +27,10 @@ public class InsertSort {
         }
         //开始时间
         Date begin = new Date();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS");
         System.out.println("排序前时间：" + format.format(begin));
 
-        InsertSort.insertSort(arr); //2s 1s 1s
+        InsertSort.insertSort(arr); //1s 153 1s 240 1s 196
 
         //结束时间
         Date end = new Date();
