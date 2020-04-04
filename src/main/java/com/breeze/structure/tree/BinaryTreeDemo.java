@@ -29,5 +29,13 @@ public class BinaryTreeDemo {
         binaryTree.midOrder();
         System.out.println("后序遍历：");
         binaryTree.postOrder();
+
+        System.out.println("前序遍历查找：");
+        System.out.println(binaryTree.preOrderSearch(5));
+        System.out.println("中序遍历查找：");
+        System.out.println(binaryTree.midOrderSearch(5));
+        System.out.println("后序遍历查找：");
+        System.out.println(binaryTree.postOrderSearch(5));
+
     }
 }

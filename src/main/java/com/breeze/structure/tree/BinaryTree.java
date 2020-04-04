@@ -31,6 +31,44 @@ import lombok.Data;
 public class BinaryTree {
     //根节点
     private HeroNode root;
+    /**
+     * 前序遍历查找
+     * @param no
+     * @return
+     */
+    public HeroNode preOrderSearch(int no) {
+        if (root != null) {
+            return root.preOrderSearch(no);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * 中序遍历查找
+     * @param no
+     * @return
+     */
+    public HeroNode midOrderSearch(int no) {
+        if (root != null) {
+            return root.midOrderSearch(no);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * 后序遍历查找
+     * @param no
+     * @return
+     */
+    public HeroNode postOrderSearch(int no) {
+        if (root != null) {
+            return root.postOrderSearch(no);
+        } else {
+            return null;
+        }
+    }
 
     /**
      * 前序遍历
