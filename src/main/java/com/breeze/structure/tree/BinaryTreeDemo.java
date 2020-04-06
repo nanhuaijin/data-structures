@@ -37,5 +37,14 @@ public class BinaryTreeDemo {
         System.out.println("后序遍历查找：");
         System.out.println(binaryTree.postOrderSearch(5));
 
+        //删除节点
+        System.out.println("===========================");
+        System.out.println("删除前：");
+        binaryTree.preOrder();
+//        binaryTree.delNode(5);
+        binaryTree.delNode(3);
+
+        System.out.println("删除后：");
+        binaryTree.preOrder();
     }
 }

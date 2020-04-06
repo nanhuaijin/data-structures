@@ -114,7 +114,36 @@ public class HeroNode {
         return resNode;
     }
 
+    /**
+     * 递归删除节点
+     * 1.如果删除的节点是叶子节点，则删除该节点
+     * 2.如果删除的节点是非叶子节点，则删除该子树
+     * @param no
+     */
+    public void delNode(int no) {
 
+        //2.如果当前节点的左子节点不为空，并且左子节点就是要删除的节点
+        if (this.left != null && this.left.no == no) {
+            this.left = null;
+            return;
+        }
+
+        //3.如果当前节点的右子节点不为空，并且右子节点就是要删除的节点
+        if (this.right != null && this.right.no == no) {
+            this.right = null;
+            return;
+        }
+
+        //4.我们就需要向左子树进行递归删除
+        if (this.left != null) {
+            this.left.delNode(no);
+        }
+
+        //5.向右子树递归删除
+        if (this.right != null) {
+            this.right.delNode(no);
+        }
+    }
 
     /**
      * 前序遍历

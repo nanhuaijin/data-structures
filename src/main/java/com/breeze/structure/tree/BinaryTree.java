@@ -71,6 +71,25 @@ public class BinaryTree {
     }
 
     /**
+     * 删除节点
+     * @param no
+     */
+    public void delNode(int no) {
+        if (root != null) {
+            //如果只有一个root节点，立即判断root是不是要删除节点
+            if (root.getNo() == no) {
+                root = null;
+            } else {
+                //递归删除
+                root.delNode(no);
+            }
+        } else {
+            System.out.println("空树，不能删除！");
+        }
+    }
+
+
+    /**
      * 前序遍历
      */
     public void preOrder() {
