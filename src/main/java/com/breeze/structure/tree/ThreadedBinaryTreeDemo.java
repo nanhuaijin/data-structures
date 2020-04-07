@@ -32,5 +32,12 @@ public class ThreadedBinaryTreeDemo {
         HeroNode node4Right = node4.getRight();
         System.out.println("10号节点的前驱节点：" + node4Left);
         System.out.println("10号节点的后继节点：" + node4Right);
+
+        //当线索化二叉树后，不能在使用原先的遍历方法
+        //threadedBinaryTree.midOrder();//java.lang.StackOverflowError
+
+        System.out.println("使用线索化遍历线索化二叉树：");
+        threadedBinaryTree.threadedList();
+
     }
 }
