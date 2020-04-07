@@ -16,6 +16,11 @@ public class HeroNode {
     private HeroNode left;
     private HeroNode right;
 
+    //1.如果leftType == 0 表示指向左子树，1是前驱节点
+    private int leftType;
+    //2.如果rightType == 0 表示指向右子树，1是后继节点
+    private int rightType;
+
     public HeroNode(int no, String name) {
         this.no = no;
         this.name = name;
