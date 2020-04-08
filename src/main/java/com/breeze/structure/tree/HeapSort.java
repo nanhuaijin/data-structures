@@ -1,5 +1,8 @@
 package com.breeze.structure.tree;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * @author breeze
  * @date 2020/4/8
@@ -9,8 +12,22 @@ package com.breeze.structure.tree;
 public class HeapSort {
     public static void main(String[] args) {
         //要求对数组进行升序排列 - 大顶堆
-        int[] arr = {4, 6, 8, 5, 9};
-        heapSort(arr);
+        int[] arr = new int[80000];
+        //测试堆排序时间
+        for (int i = 0; i < 80000; i++) {
+            arr[i] = (int) (Math.random() * 8000000); //随机生成一个[0, 8000000)数
+        }
+        //开始时间
+        Date begin = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS");
+        System.out.println("排序前时间：" + format.format(begin));
+
+        HeapSort.heapSort(arr);// 121s 107s 150s
+
+        //结束时间
+        Date end = new Date();
+        System.out.println("排序前时间：" + format.format(end));
+
     }
 
     /**
