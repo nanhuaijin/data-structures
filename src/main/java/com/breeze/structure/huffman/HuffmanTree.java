@@ -1,8 +1,6 @@
 package com.breeze.structure.huffman;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author : breeze
@@ -32,12 +30,13 @@ public class HuffmanTree {
     public static void main(String[] args) {
         int[] arr = {13, 7, 8, 3, 29, 6, 1};
         Node root = createHuffmanTree(arr);
-
+        //创建赫夫曼树
         preOrder(root);
     }
 
     /**
      * 前序遍历
+     *
      * @param root 赫夫曼树根节点
      */
     public static void preOrder(Node root) {
@@ -50,6 +49,7 @@ public class HuffmanTree {
 
     /**
      * 创建赫夫曼树
+     *
      * @param arr 数组
      * @return 创建好后的赫夫曼树的root节点
      */

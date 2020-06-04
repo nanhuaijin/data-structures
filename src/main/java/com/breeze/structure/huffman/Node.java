@@ -9,12 +9,18 @@ package com.breeze.structure.huffman;
  * 需要让Node实现Comparable接口
  */
 public class Node implements Comparable<Node>{
+    Byte data; //字符
     int value; //节点权值
     Node left; //指向左子节点
     Node right; //指向优子节点
 
     public Node(int value) {
         this.value = value;
+    }
+
+    public Node(Byte data, int value) {
+        this.value = value;
+        this.data = data;
     }
 
     //前序遍历
@@ -31,7 +37,8 @@ public class Node implements Comparable<Node>{
     @Override
     public String toString() {
         return "Node{" +
-                "value=" + value +
+                "data=" + data +
+                ", value=" + value +
                 '}';
     }
 
