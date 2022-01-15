@@ -8,7 +8,7 @@ import java.util.Random;
  * @desc : 选择排序算法 - 选择最小值放到前面位置
  *
  */
-public class 选择排序 {
+public class 选择排序_001 {
     public static void main(String[] args) {
 
         int[] arr = new int[100000];
