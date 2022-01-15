@@ -33,8 +33,7 @@ public class 出现奇数次的数_001 {
      *  2.由于result不等于0，result二进制表示数中肯定有一位不为0，我们假设第8位为不为0的位置
      *      再假设 a第八位是1，b的第八位就是0。按照这个思路我们可以将数组中的数的第八位二进制进行分组
      *  3.一种是第八位是1的数组成的数组arr1，一种是第八位是0的数组成的数组arr0，
-     *      arr1相互异或得到a的第八位的二进制，arr0相互异或得到b的第八位的二进制
-     *  4.所以只要遍历每个数的二进制的每个位数，分组相互异或就可以推导出ab的二进制位值
+     *      arr1相互异或得到a，arr0相互异或得到b
      * @param arr
      */
     public static void select2(int[] arr) {
@@ -42,11 +41,13 @@ public class 出现奇数次的数_001 {
         for (int cur : arr) {
             result ^= cur;
         }
-        //假设result最右侧为1的索引是i
+        //假设result最右侧为1的索引是i，rightOne就是i位置是1，其余位置都是0的数
         int rightOne = result & (~result + 1);
         int a = 0;
         for (int cur : arr) {
-            //分组，
+            //由于result不等于0，所以当前数与运算rightOne == 0就可以将所有数进行分组
+            //等于0一组，等于rightOne的一组
+            //再因为分组后其他数都是偶数个，所以异或运算就可以得到a
             if ((cur & rightOne) == 0) {
                 a ^= cur;
             }
