@@ -11,18 +11,21 @@ import java.util.Random;
 public class 插入排序_003 {
     public static void main(String[] args) {
 
-        int[] arr = new int[10];
-        Random random = new Random();
-        for (int i = 0; i < 10; i++) {
-            arr[i] = random.nextInt(100);
-        }
+        int[] arr = LogarithmUtils.getArray(10000, 500000);
+        int[] compArr = LogarithmUtils.copyArr(arr);
+
         long begin = System.currentTimeMillis();
         sort(arr);
+        Arrays.sort(compArr);
         long end = System.currentTimeMillis();
+        boolean flag = LogarithmUtils.compareArr(arr, compArr);
+
+        System.out.println(flag ? "success" : "fail");
         System.out.println("开始" + begin);
         System.out.println("结束" + end);
         System.out.println("差值" + (end - begin));
-        System.out.println("数组" + Arrays.toString(arr));
+        // System.out.println("数组" + Arrays.toString(arr));
+        // System.out.println("数组" + Arrays.toString(compArr));
     }
 
     public static void sort(int[] arr) {
