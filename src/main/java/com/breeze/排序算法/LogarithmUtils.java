@@ -14,7 +14,7 @@ public class LogarithmUtils {
      * @return
      */
     public static int[] getArray(int maxSize, int maxValue) {
-        int[] arr = new int[(int) ((Math.random() * maxSize) + 1)];
+        int[] arr = new int[(int) ((Math.random() * maxSize) + 5)];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) (Math.random() * maxValue - Math.random() * maxValue);
         }

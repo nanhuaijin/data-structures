@@ -37,6 +37,7 @@ public class 冒泡排序_002 {
                     arr[j + 1] = arr[j + 1] ^ arr[j];
                 }
             }
+            System.out.println(Arrays.toString(arr));
         }
     }
 }
