@@ -1,5 +1,7 @@
 package com.breeze.排序算法;
 
+import java.util.Random;
+
 /**
  * @author : breeze
  * @date : 2022/1/15
@@ -14,9 +16,9 @@ public class LogarithmUtils {
      * @return
      */
     public static int[] getArray(int maxSize, int maxValue) {
-        int[] arr = new int[(int) ((Math.random() * maxSize) + 5)];
+        int[] arr = new int[(new Random().nextInt(maxSize) + 2)];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) (Math.random() * maxValue - Math.random() * maxValue);
+            arr[i] = (int) (Math.random() * maxValue);
         }
         return arr;
     }
